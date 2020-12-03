@@ -36,7 +36,7 @@ function HOME() {
     static.MENU(REQ, RES);
     let $buffer = `
     <div class="shellmaster"><h1>Command Shell</h1>
-    <div class="sdescription">Meant To Run Some bsic commands to check stuff! its not complete shell repalcement</div>
+    <div class="sdescription">Meant To Run Some basic commands to check stuff! its not complete shell repalcement</div>
     <div id="shellcmd"><input type="text" placeholder="Command" id="CMD"/><button id="SHELLCLEAR">CLEAR</button></div>
     <div id="shelloutput"></div>
     </div>
