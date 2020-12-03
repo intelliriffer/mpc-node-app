@@ -1,0 +1,202 @@
+body * {
+    font-family: verdana;
+    box-sizing: border-box;
+}
+
+#audio {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#PROJECTLIST {
+
+    flex-wrap: wrap;
+}
+
+#PROJECTLIST li {
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+
+#audio li {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    flex: 1;
+    border: 1px solid #000;
+    padding: 0;
+
+    align-items: center;
+}
+
+#audio li a {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0;
+}
+
+audio {
+    margin: 8px;
+    max-width: 180px;
+}
+
+nav {
+    display: flex;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0px 16px;
+    height: 32px;
+    width: 100%;
+    align-items: center;
+}
+
+nav>div {
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+body {
+    margin-top: 48px;
+}
+
+.mtitle {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 300px;
+}
+
+nav .menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    height: 32px;
+    align-items: center;
+}
+
+nav .menu ul li {
+    display: flex;
+    padding: 4px 8px;
+    border-right: 1px solid #ccc;
+    font-size: 12px;
+    height: 32px;
+    align-items: center;
+
+    text-transform: uppercase;
+}
+
+nav .menu ul li:last-child {
+    border: 0;
+}
+
+nav .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+nav .menu ul li:hover {
+    background-color: crimson;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+#TASKS {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#TASKS li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    text-decoration: none;
+    height: 200px;
+    width: 200px;
+    padding: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #000;
+
+}
+
+#TASKS li a:hover {
+    background-color: crimson;
+    color: #fff;
+}
+
+#TASKS li {
+    width: 200px;
+    height: 200px;
+    margin: 16px;
+
+}
+
+#arplist {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#arplist li {
+    min-width: 400px;
+    max-width: 400px;
+    flex: 1;
+    font-size: 12px;
+    display: flex;
+    margin: 8px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+#arplist li>div {
+    flex: 1;
+}
+
+.arpload {
+    display: flex;
+    align-items: center;
+}
+
+.arpload h1 {
+    margin-right: 32px;
+}
+
+.upload button,
+#arplist button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 6px;
+    padding: 4px 8px;
+    cursor: pointer;
+
+}
+
+.upload button {
+    margin-right: 8px;
+}
+
+.upload button:hover,
+#arplist button:hover {
+    background-color: crimson;
+}

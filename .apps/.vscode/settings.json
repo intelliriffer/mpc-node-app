@@ -1,0 +1,9 @@
+{
+  "emeraldwalk.runonsave": {
+     "commands": [   {
+            "match": "\\.js$",
+            "cmd": "js-beautify -r ${file}"
+	    }
+    ]
+    }
+}
