@@ -14,7 +14,7 @@ let RES = null;
 let URL = null;
 const fs = require('fs');
 let JSFILES = [
-    "https://code.jquery.com/jquery-3.5.1.min.js",
+    "static/js/libs/jquery-3.5.1.min.js",
 
 ];
 
