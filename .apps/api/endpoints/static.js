@@ -22,7 +22,7 @@ function INIT($req, $res) {
     RES = $res;
     $URL = $req.url.split("/").slice(2).join('/');
     //    RES.writeHead(200, { 'Content-Type': 'text/html' });
-    $staticroot = `${__dirname}/../assets/`;
+    $staticroot = `${__dirname}/../../assets/`;
     $tfile = $staticroot + $URL;
 
     if (!fs.existsSync($tfile)) {
