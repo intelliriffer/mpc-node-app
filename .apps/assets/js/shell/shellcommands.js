@@ -6,6 +6,11 @@ const CMDLIB = [
         DESCRIPTION: "Checks Whether / is Rwad Write or Read Only"
     },
     {
+        CMD: `df -hT | grep 'Filesystem\\|/dev/root\\|/media/'`,
+        NAME: "Checks Disk Space",
+        DESCRIPTION: "Show Disk Space for Devices"
+    },
+    {
         CMD: `mount remount / -o rw,remount &&  grep /dev/root /proc/mounts`,
         NAME: "Mount / ReadWrite",
         DESCRIPTION: "ReMounts / for Writing"
@@ -28,8 +33,8 @@ const CMDLIB = [
     {
         CMD: `dmesg | tail -n ??`,
         NAME: "Last N Dmesg ",
-        DESCRIPTION: "Show Last N disgnostic messages",
-        PROMPT: "Last How Many Messages?",
+        DESCRIPTION: "Show Last N diagnostic messages",
+        PROMPT: "Last How Many Diagnostic Messages?",
         DEFAULT: 10
 
     },

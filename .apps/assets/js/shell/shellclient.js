@@ -44,7 +44,8 @@ Description: ${$cmd.DESCRIPTION}`;
     }
     function run() {
         $cmd = $('#CMD').val();
-        $('#shelloutput').html(`#: <span class="cmd">${$cmd}</span>`);
+        //      $('#shelloutput').html(`#: <span class="cmd">${$cmd}</span>`);
+        init();
         $payload = JSON.stringify({
             CMD: $cmd
         });
@@ -52,7 +53,7 @@ Description: ${$cmd.DESCRIPTION}`;
 
             data = JSON.parse(r);
             if (data.DATA != '') {
-                $('#shelloutput').append(`<br/><br/>${data.DATA}`);
+                $('#shelloutput').append(`${data.DATA}`);
             } else { $('#shelloutput').append(`<br/>OK`); }
         });
     }
