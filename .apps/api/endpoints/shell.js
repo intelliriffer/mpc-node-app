@@ -33,7 +33,7 @@ function HOME() {
     });
     static.HEAD(RES, "COMMAND SHELL", [], ["/static/js/shell/shellclient.js"]);
     RES.write('<body>');
-    static.MENU(RES);
+    static.MENU(REQ, RES);
     let $buffer = `
     <div class="shellmaster"><h1>Command Shell</h1>
     <div class="sdescription">Meant To Run Some bsic commands to check stuff! its not complete shell repalcement</div>

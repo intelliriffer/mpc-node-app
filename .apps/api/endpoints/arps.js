@@ -45,7 +45,7 @@ function HOME() {
     });
     static.HEAD(RES, "Arp Patterns Manager", [], ["/static/js/arps/arpclient.js"]);
     RES.write('<body>');
-    static.MENU(RES);
+    static.MENU(REQ, RES);
     RES.write('<div class="arpload"><h1>Arp Patterns <span id="count"></span></h1>');
     RES.write('<div class="upload"><button id="upload">Upload Midi Files</button><input type="file" id="fupload" accept=".mid" multiple > <button id="backup">Download All</button><button id="clear">Remove All</button></div></div>');
     RES.write('<ol id="arplist">');

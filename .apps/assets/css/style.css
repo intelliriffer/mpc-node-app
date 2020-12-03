@@ -108,7 +108,8 @@ nav .menu ul li a {
     display: block;
 }
 
-nav .menu ul li:hover {
+nav .menu ul li:hover,
+li.active {
     background-color: crimson;
 }
 
@@ -137,7 +138,8 @@ h1 {
 
 }
 
-#TASKS li a:hover {
+#TASKS li a:hover,
+    {
     background-color: crimson;
     color: #fff;
 }

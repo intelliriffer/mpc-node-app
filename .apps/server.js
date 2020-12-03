@@ -7,7 +7,7 @@ var server = http.createServer(function (req, res) { //create web server
             'Content-Type': 'text/html'
         });
         let endPoint = require('./api/endpoints/home.js');
-        endPoint.INIT(res);
+        endPoint.INIT(req, res);
     } else {
         let $done = false;
         for (let i = 0; i < ENDPOINTS.length; i++) {

@@ -2,6 +2,7 @@ module.exports = {
     INIT
 };
 let RES = null;
+let REQ = null;
 let URL = null;
 const fs = require('fs');
 const static = require('./static.js');
@@ -9,6 +10,7 @@ const ProjectFolder = static.CONFIG.PROJECTS_DIR;
 
 function INIT($req, $res) {
     RES = $res;
+    REQ = $req;
     URL = $req.url.replace("/^\//", '').split('/');
 
     switch (URL[2]) {
@@ -39,7 +41,7 @@ function LIST() {
     });
     static.HEAD(RES, "Projects List");
     RES.write('<body>');
-    static.MENU(RES);
+    static.MENU(REQ, RES);
     RES.write('<h1>SSD / Projects</h1>');
     RES.write('<ol id="PROJECTLIST">');
     files.forEach(f => {
@@ -67,8 +69,7 @@ function READ() {
 
     static.HEAD(RES, "Projects Contents");
     RES.write("<body>");
-    static.MENU(RES);
-
+    static.MENU(REQ, RES);
     RES.write('<a href="javascript:history.back(-1)"><< Back <<</a>');
     RES.write(`<h1>Project:  ${unescape($f)} Contents</h1>`);
     RES.write('<ol id="audio">');

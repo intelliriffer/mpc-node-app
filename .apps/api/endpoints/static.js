@@ -1,5 +1,6 @@
 const TASKS = require(__dirname + '/../ENDPOINTS.js');
 let RES = null;
+let REQ = null;
 let URL = null;
 const fs = require('fs');
 let JSFILES = [
@@ -9,6 +10,7 @@ let JSFILES = [
 
 function INIT($req, $res) {
     RES = $res;
+    REQ = $req;
     $URL = $req.url.split("/").slice(2).join('/');
     //    RES.writeHead(200, { 'Content-Type': 'text/html' });
     $staticroot = `${__dirname}/../../assets/`;
@@ -66,12 +68,15 @@ function HEAD(res, title = 'myApp', css = [], js = []) {
     res.write("</head>");
 }
 
-function MENU(res) {
+function MENU(req, res) {
     res.write("<nav>");
     res.write('<div class="mtitle">FORCE / MPC Server</div>');
     res.write('<div class="menu"><ul>');
+
     TASKS.forEach(t => {
-        if (!t.HIDDEN) res.write(`<li><a href="${escape(t.URL)}">${t.NAME}</a></li>`);
+        $selected = '';
+        if ((req.url.startsWith(t.PARAM) && t.PARAM != "/") || req.url == t.PARAM) $selected = "active";
+        if (!t.HIDDEN) res.write(`<li class="${$selected}"><a href="${escape(t.URL)}">${t.NAME}</a></li>`);
 
     });
     res.write("</ul></div></nav>");
