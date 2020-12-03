@@ -43,7 +43,7 @@ function HOME() {
     RES.writeHead(200, {
         'Content-Type': 'text/html'
     });
-    static.HEAD(RES, "Arp Patterns Manager", [], ["/static/js/arpclient.js"]);
+    static.HEAD(RES, "Arp Patterns Manager", [], ["/static/js/arps/arpclient.js"]);
     RES.write('<body>');
     static.MENU(RES);
     RES.write('<div class="arpload"><h1>Arp Patterns <span id="count"></span></h1>');
@@ -142,7 +142,7 @@ function ADD() {
 
     if (REQ.method != "POST") return;
     let form = new mp.Form();
-    form.parse(REQ, function(err, fields, files) {
+    form.parse(REQ, function (err, fields, files) {
         RES.writeHead(200, {
             'content-type': 'text/plain'
         });
@@ -209,7 +209,7 @@ function DOWNLOAD() {
     };
     try {
         helper.shellSync('rm /tmp/Arp*.tar');
-    } catch (e) {}
+    } catch (e) { }
     $cmd = `tar -cvf ${$sFile}  -C "/usr/share/Akai/SME0/Arp Patterns/" .`;
     try {
         $tar = helper.shellSync($cmd).toString();
