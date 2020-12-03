@@ -15,7 +15,6 @@ module.exports = {
         return `${$d.getFullYear()}-${$d.getMonth()}-${$d.getDay()}-${$d.getHours()}-${$d.getMinutes()}-${$d.getSeconds()}`;
     },
     shellSync: function ($cmd) {
-        console.log($cmd);
         const execSync = require('child_process').execSync;
         return execSync($cmd);
 

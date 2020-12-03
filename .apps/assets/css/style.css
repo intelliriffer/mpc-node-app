@@ -200,3 +200,35 @@ h1 {
 #arplist button:hover {
     background-color: crimson;
 }
+
+#shelloutput {
+    background-color: #000;
+    color: yellowgreen;
+    font-size: 14px;
+    flex: 1;
+    height: 500px;
+    overflow: scroll;
+    padding: 16px;
+    margin: 0;
+    font-family: monospace;
+    line-height: 18px;
+    white-space: pre;
+}
+
+#shelloutput .cmd {
+    color: cyan;
+}
+
+#shellcmd {
+    display: flex;
+}
+
+#shellcmd input {
+    flex: 1
+}
+
+.sdescription {
+    font-size: 12px;
+    margin-top: -16px;
+    margin-bottom: 8px;
+}
