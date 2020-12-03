@@ -138,8 +138,7 @@ h1 {
 
 }
 
-#TASKS li a:hover,
-    {
+#TASKS li a:hover {
     background-color: crimson;
     color: #fff;
 }
@@ -233,4 +232,29 @@ h1 {
     font-size: 12px;
     margin-top: -16px;
     margin-bottom: 8px;
+}
+
+
+@media(max-width:600px) {
+    nav {
+        flex-wrap: wrap;
+        background-color: #000;
+        position: relative;
+        height: unset;
+    }
+
+    nav .menu {
+        /* border-top: 1px solid #ccc;*/
+    }
+
+    .mtitle,
+    .menu {
+        width: 100%;
+    }
+
+    body {
+        margin: initial;
+    }
+
+
 }
