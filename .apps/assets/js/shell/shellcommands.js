@@ -1,6 +1,11 @@
 /* Library of shell commands use */
 const CMDLIB = [
     {
+        CMD: `grep -q '/dev/root / ext4 rw,' /proc/mounts && echo "/ is Read/Write" || echo "/ is Read Only!"`,
+        NAME: "Check / Mount Status",
+        DESCRIPTION: "Checks Whether / is Rwad Write or Read Only"
+    },
+    {
         CMD: `mount remount / -o rw,remount &&  grep /dev/root /proc/mounts`,
         NAME: "Mount / ReadWrite",
         DESCRIPTION: "ReMounts / for Writing"

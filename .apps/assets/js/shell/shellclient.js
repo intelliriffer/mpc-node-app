@@ -30,7 +30,7 @@ Description: ${$cmd.DESCRIPTION}`;
             if (!confirm($msg)) return;
         }
         $ecmd = $cmd.CMD;
-        if ($cmd.CMD.indexOf('??')) {
+        if ($cmd.CMD.indexOf('??') > 1) {
             $v = prompt($cmd.PROMPT, $cmd.DEFAULT);
             $ecmd = $cmd.CMD.replace("??", $v);
         }
