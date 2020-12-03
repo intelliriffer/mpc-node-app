@@ -1,15 +1,4 @@
-const TASKS = [{
-    NAME: "Home",
-    URL: "/"
-}, {
-    NAME: "Projects",
-    URL: "/projects"
-}, {
-    NAME: "Arp Manager",
-    URL: "/arps"
-}
-
-];
+const TASKS = require(__dirname + '/../ENDPOINTS.js');
 let RES = null;
 let URL = null;
 const fs = require('fs');
@@ -82,7 +71,7 @@ function MENU(res) {
     res.write('<div class="mtitle">FORCE / MPC Server</div>');
     res.write('<div class="menu"><ul>');
     TASKS.forEach(t => {
-        res.write(`<li><a href="${escape(t.URL)}">${t.NAME}</a></li>`);
+        if (!t.HIDDEN) res.write(`<li><a href="${escape(t.URL)}">${t.NAME}</a></li>`);
 
     });
     res.write("</ul></div></nav>");

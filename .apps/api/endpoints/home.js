@@ -6,11 +6,9 @@ let URL = null;
 const fs = require('fs');
 const static = require('./static.js');
 
-
 function INIT($res) {
     RES = $res;
     LIST();
-
 }
 
 function LIST() {
@@ -25,7 +23,7 @@ function LIST() {
 
     RES.write('<ul id="TASKS">');
     static.TASKS.forEach(t => {
-        RES.write('<li><a href="' + escape(t.URL) + '">' + t.NAME + '</a></li>');
+        if (!t.HIDDEN) RES.write('<li><a href="' + escape(t.URL) + '">' + t.NAME + '</a></li>');
     });
     RES.write('</ul>')
     RES.write('</body></html>');
