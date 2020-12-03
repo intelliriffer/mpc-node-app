@@ -31,14 +31,18 @@ function HOME() {
     RES.writeHead(200, {
         'Content-Type': 'text/html'
     });
-    static.HEAD(RES, "COMMAND SHELL", [], ["/static/js/shell/shellclient.js"]);
+    static.HEAD(RES, "COMMAND SHELL", [], [
+        "/static/js/shell/shellcommands.js",
+        "/static/js/shell/shellclient.js"
+    ]);
     RES.write('<body>');
     static.MENU(REQ, RES);
     let $buffer = `
     <div class="shellmaster"><h1>Command Shell</h1>
     <div class="sdescription">Meant To Run Some basic commands to check stuff! its not complete shell repalcement</div>
-    <div id="shellcmd"><input type="text" placeholder="Command" id="CMD"/><button id="SHELLCLEAR">CLEAR</button></div>
-    <div id="shelloutput"></div>
+    <div id="shellcmd"><input type="text" placeholder="Enter Command, ESC to Clear" id="CMD"/></div>
+    <div id="shelloutput" class="ui-widget-content"></div>
+    <div id="shelllib"></div>
     </div>
     </body></html>
     `;

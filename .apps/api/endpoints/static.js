@@ -5,6 +5,7 @@ let URL = null;
 const fs = require('fs');
 let JSFILES = [
     "static/js/libs/jquery-3.5.1.min.js",
+    "/static/js/libs/jquery-ui.min.js"
 
 ];
 
@@ -37,6 +38,7 @@ function INIT($req, $res) {
 
 function CSS() {
     let files = [
+        "/static/css/jquery-ui.min.css",
         "/static/css/style.css"
     ]
     return files.map(cssTag);
