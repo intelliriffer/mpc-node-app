@@ -5,7 +5,7 @@ let RES = null;
 let URL = null;
 const fs = require('fs');
 const static = require('./static.js');
-const ProjectFolder = '/media/FORCE/Projects';
+const ProjectFolder = static.CONFIG.PROJECTS_DIR;
 
 function INIT($req, $res) {
     RES = $res;
