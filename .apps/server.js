@@ -1,6 +1,6 @@
 var http = require('http'); // Import Node.js core module
 
-var server = http.createServer(function(req, res) { //create web server
+var server = http.createServer(function (req, res) { //create web server
     if (req.url == '/') { //check the URL of the current request
         res.writeHead(200, {
             'Content-Type': 'text/html'
@@ -21,6 +21,6 @@ var server = http.createServer(function(req, res) { //create web server
 
 });
 
-server.listen(5000); //6 - listen for any incoming requests
+server.listen(80); //6 - listen for any incoming requests
 
-console.log('Node.js web server at port 5000 is running..')
+console.log('Node.js web server at port 80 is running..');

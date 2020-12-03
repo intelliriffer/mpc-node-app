@@ -5,7 +5,6 @@ let RES = null;
 let URL = null;
 const fs = require('fs');
 const static = require('./static.js');
-const ProjectFolder = '/media/FORCE/Projects';
 
 
 function INIT($res) {
@@ -20,7 +19,7 @@ function LIST() {
     });
     let files = [];
 
-    static.HEAD(RES, "Projects List");
+    static.HEAD(RES, "MPC / Force Server");
     RES.write('<body>');
     static.MENU(RES);
 
