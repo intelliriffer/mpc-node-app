@@ -18,5 +18,22 @@ module.exports = {
         const execSync = require('child_process').execSync;
         return execSync($cmd);
 
+    },
+    shell: async function ($cmd) {
+        let $ret = '';
+        return new Promise(resolve => {
+            const exec = require('child_process').exec;
+            exec($cmd, (error, stdout, stderr) => {
+                if (error) {
+                    resolve(`Error: ${error}`);
+                    return;
+                }
+
+                resolve(stdout);
+            });
+
+        });
+        //return $ret;
+
     }
 }

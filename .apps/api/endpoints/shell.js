@@ -62,13 +62,14 @@ function RUN() {
             $body += chunk.toString();
         });
 
-        REQ.on('end', () => {
+        REQ.on('end', async () => {
             RES.writeHead(200, {
                 'Content-Type': 'text/plain'
             });
             let $cmd = JSON.parse($body).CMD;
             try {
-                $results = helper.shellSync($cmd).toString();
+                //  $results = helper.shellSync($cmd).toString();
+                $results = await helper.shell($cmd);
                 $OK.DATA = $results;
             } catch (e) {
                 $OK.DATA = e.message;
