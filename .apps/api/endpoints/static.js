@@ -1,13 +1,13 @@
 const TASKS = [{
-        NAME: "Home",
-        URL: "/"
-    }, {
-        NAME: "Projects",
-        URL: "/projects"
-    }, {
-        NAME: "Arp Manager",
-        URL: "/arps"
-    }
+    NAME: "Home",
+    URL: "/"
+}, {
+    NAME: "Projects",
+    URL: "/projects"
+}, {
+    NAME: "Arp Manager",
+    URL: "/arps"
+}
 
 ];
 let RES = null;
@@ -114,7 +114,7 @@ function SAVECONFIG($data) {
 }
 
 let CONFIG = {};
-CONFIG = JSON.parse(fs.readFileSync(`${__dirname}/config.json`));
+CONFIG = JSON.parse(fs.readFileSync(`${__dirname}/../../config.json`));
 
 module.exports = {
     INIT,
