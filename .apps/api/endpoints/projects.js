@@ -90,10 +90,7 @@ function READ() {
         RES.write("</li>");
     });
     RES.write('</ol>')
-    RES.write('</body></html>');
-
-
-    RES.write('</body></html>');
+    static.CLOSE(RES);
     RES.end();
 }
 

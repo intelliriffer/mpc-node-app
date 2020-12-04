@@ -1,0 +1,198 @@
+[
+    {
+        "NAME": "General",
+        "ITEMS": [
+            {
+                "NAME": "Major with Inversions",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I ii iii IV V vi MUTE MUTE I6 ii6 iii6 IV6 V6 vi6 I6 MUTE I6\/4 ii6\/4 iii6\/4 IV6\/4 V6\/4 vi6\/4 MUTE MUTE"
+            },
+            {
+                "NAME": "Minor with Inversions",
+                "KEY": "C",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i IIdim III iv v VI VII MUTE i6 IIdim III6 iv6 v6 VI6 VII6 MUTE i6\/4 IIdim III6\/4 iv6\/4 v6\/4 VI6\/4 VII6\/4 MUTE"
+            },
+            {
+                "NAME": "Sussy Major Scale",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I ii iii IV V VI VIIdim MUTE ISus2 IISus2 IIISus2 IVSus2 VSus2 VISus2 VIISus2 MUTE ISus4 IISus4 IIISus4 IVSus4 VSus4 VISus4 VIISus4 MUTE"
+            },
+            {
+                "NAME": "Most Popular with Inversions",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I V vi IV MUTE MUTE MUTE MUTE I6 V6 vi6 IV6 MUTE MUTE MUTE MUTE I6\/4 V6\/4 vi6\/4 IV6\/4 MUTE MUTE MUTE MUTE"
+            },
+            {
+                "NAME": "15634 Pachelbel's",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I V vi iii IV"
+            },
+            {
+                "NAME": "6545 Effective",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "vi V IV V"
+            },
+            {
+                "NAME": "1645 Magic Changes",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I vi IV V"
+            },
+            {
+                "NAME": "1465 Getting Pop",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I IV vi V"
+            },
+            {
+                "NAME": "1545 Timeless",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I V IV V"
+            },
+            {
+                "NAME": "Cadential 64",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "IV ii I6\/4 V I"
+            },
+            {
+                "NAME": "Step Bass Down",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I V6 vi V"
+            },
+            {
+                "NAME": "Step Bass Up",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I ii7 I6 IV"
+            },
+            {
+                "NAME": "NewComer",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I iii6\/4 vi IV"
+            },
+            {
+                "NAME": "I6 Precadence",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "IV I6 V"
+            },
+            {
+                "NAME": "Simple Powerful",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "IV I6 ii"
+            },
+            {
+                "NAME": "Applied bVII",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "V bVI vi"
+            },
+            {
+                "NAME": "Mixolydian Cadence",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I bVII IV I"
+            },
+            {
+                "NAME": "All Flavors of Root",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I i Idim ISus2 ISus4 I6 I6\/4 i6 i6\/4 I7 IM7 i7 Iadd9 I9 i9 i7b5 Iaug Iaug7"
+            },
+            {
+                "NAME": "Majors and Minors Mapped",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I bII II bIII III IV bV V bVI VI bVII VII i bii ii biii iii iv bv v bvi vi bvii vii"
+            },
+            {
+                "NAME": "Harmonized Major KbMapped",
+                "KEY": "C",
+                "SCALE": "Major",
+                "PROGRESSION": "I-1 MUTE ii-1 MUTE iii-1 IV-1 MUTE V-1 MUTE vi-1 MUTE VIIdim-1 I MUTE ii MUTE iii IV MUTE V MUTE vi MUTE VIIdim"
+            },
+            {
+                "NAME": "Hanmonized Minor KbMapped",
+                "KEY": "C",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i-1 MUTE IIdim-1 III-1 MUTE iv-1 MUTE v-1 VI-1 MUTE VII-1 MUTE i MUTE IIdim III MUTE iv MUTE v VI MUTE VII MUTE"
+            }
+        ]
+    },
+    {
+        "NAME": "Songs",
+        "ITEMS": [
+            {
+                "NAME": "Daddy Cool - Boney M",
+                "KEY": "F",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i VII v i"
+            },
+            {
+                "NAME": "Sandstorm - Darude",
+                "KEY": "E",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i i iv7 III i i"
+            },
+            {
+                "NAME": "Sirius - TAPP",
+                "KEY": "B",
+                "SCALE": "NMinor",
+                "PROGRESSION": "I bVI IV i bVI iv IV iv i bVI iv IV i"
+            },
+            {
+                "NAME": "Giorgio By Moroder - Daft Punk",
+                "KEY": "A",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i v i v MUTE VI VII iv v VI VII v"
+            },
+            {
+                "NAME": "Day Tripper - Beatles",
+                "KEY": "E",
+                "SCALE": "Major",
+                "PROGRESSION": "I I IV I MUTE I ii7 IV V7 VI V"
+            },
+            {
+                "NAME": "Get Lucky - Daft Punk",
+                "KEY": "B",
+                "SCALE": "NMinor",
+                "PROGRESSION": "IV i7 III v7 IV i7 III v7 IV MUTE i7 III v7 IV i7 III v7 IV"
+            },
+            {
+                "NAME": "Around the World - Daft Punk",
+                "KEY": "E",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i VII IV6 VI"
+            },
+            {
+                "NAME": "BOA-ADJ",
+                "KEY": "G#",
+                "SCALE": "NMinor",
+                "PROGRESSION": "VI v i v6 VIadd9 v i v6"
+            },
+            {
+                "NAME": "The Chase-Giorgio Moroder",
+                "KEY": "C",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i v MUTE III bII III bII i V i V i"
+            },
+            {
+                "NAME": "Crocketts Theme-Jan Hammer",
+                "KEY": "D",
+                "SCALE": "NMinor",
+                "PROGRESSION": "i III VII bII vii-1 iv-1 i"
+            }
+        ]
+    }
+]

@@ -1,6 +1,12 @@
 body * {
     font-family: verdana;
     box-sizing: border-box;
+
+}
+
+body {
+    max-width: 960px;
+    margin: auto;
 }
 
 #audio {
@@ -49,7 +55,6 @@ audio {
 }
 
 nav {
-    display: flex;
     background-color: #000;
     position: fixed;
     top: 0;
@@ -60,10 +65,24 @@ nav {
     align-items: center;
 }
 
+nav .menu {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
 nav>div {
     height: 32px;
     display: flex;
     align-items: center;
+}
+
+#sub-nav {
+    margin: auto;
+    max-width: 960px;
+    display: flex;
+    align-items: center;
+
 }
 
 body {
@@ -82,7 +101,7 @@ nav .menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex: 1;
+
     height: 32px;
     align-items: center;
 }
@@ -151,21 +170,21 @@ h1 {
 }
 
 #arplist {
-
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
 }
 
 #arplist li {
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 300px;
+    max-width: 300px;
     flex: 1;
     font-size: 12px;
     display: flex;
     margin: 8px;
     border: 1px solid #000;
     border-radius: 8px;
-    padding: 4px;
+    padding: 4px 8px;
     align-items: center;
     background-color: #f2f2f2;
 }
@@ -177,10 +196,17 @@ h1 {
 .arpload {
     display: flex;
     align-items: center;
+    padding: 0px 8px
 }
 
 .arpload h1 {
     margin-right: 32px;
+}
+
+.upload {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .upload button,

@@ -27,6 +27,6 @@ function LIST() {
         if (!t.HIDDEN) RES.write('<li><a href="' + escape(t.URL) + '">' + t.NAME + '</a></li>');
     });
     RES.write('</ul>')
-    RES.write('</body></html>');
+    static.CLOSE(RES);
     RES.end();
 }

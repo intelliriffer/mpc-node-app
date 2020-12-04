@@ -3,11 +3,11 @@ const CMDLIB = [
     {
         CMD: `grep -q '/dev/root / ext4 rw,' /proc/mounts && echo "/ is Read/Write" || echo "/ is Read Only!"`,
         NAME: "Check / Mount Status",
-        DESCRIPTION: "Checks Whether / is Rwad Write or Read Only"
+        DESCRIPTION: "Checks Whether / is Read Write or Read Only"
     },
     {
         CMD: `df -hT | grep 'Filesystem\\|/dev/root\\|/media/'`,
-        NAME: "Checks Disk Space",
+        NAME: "Check Disk Space",
         DESCRIPTION: "Show Disk Space for Devices"
     },
     {

@@ -1,0 +1,115 @@
+<div id="full">
+    <header>
+        <h1>Akai FORCE/MPC Chord Progression Builder</h1>
+        <div id="midi"></div>
+    </header>
+    <div id="container">
+        <div id="panel"></div>
+        <div id="main">
+            <div id="main-nav">
+                <div class="left span nav-elms">
+                    <div class="row">
+                        <div class="group">
+                            <label>OCTAVE</label><select id="octave">
+                                <option value=0>0</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option selected value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                            </select>
+                            <label style="margin-left:16px;">Bass: </label><input type="checkbox" id="bass"
+                                title="Add Bass Note 2 Octave Below the Low Note" />
+                        </div>
+                        <div class="group">
+                            <label>Key: </label><select id="key">
+
+                            </select>
+                            <select id="scale">
+
+                            </select>
+                            <div class="pbuttons">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right"><input type="button" value="HELP" id="HELP" data-dialog="instructions" />
+                </div>
+            </div>
+            <div id="main-body">
+                <div class="controls">
+
+                    <div class="row">
+                        <input id="pname" type="text" value="" placeholder="CATEGORY-PROGRESSION NAME" />
+                        <div class="pbuttons">
+                            <input id="PLAY" type="button" value="PLAY" />
+                            <input id="SAVE" type="button" value="SAVE" />
+                            <input id="CLEAR" type="button" value="clear" />
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <div id="progression"></div>
+                </div>
+                <div class="row">
+
+                    <input id="pinput" type="text" value="" placeholder="MANUAL PROGRESSION ENTRY" />
+                </div>
+                <div id="library">
+                    <div class="dialog-bar">Progressions Library</div>
+                    <div id="libcontents">
+                        <div class="templates"></div>
+                        <div class="internal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="instructions">
+    <div class="flex">
+        <div class="dialog-bar">
+            <h3 class="dialog-title">Help & Instructions</h3>
+            <input type="button" value="CLOSE" class="dialog-close" data-dialog="instructions" />
+        </div>
+        <div class="dialog-body">
+            <ul>
+                <li><b>Purpose:</b> Solely To Generate Akai Force/Mpc Note Mode (Progreessions) Compatible
+                    Progresison
+                    Files.
+                </li>
+                <li style="color:red;">This is not a Chord/Progression Generator/Midi Converter. (Tools already
+                    Exist
+                    for those!)</li>
+                <li>Note: This is Personal Tool that I built and am sharing with community.</li>
+                <li>Click the Scale/Chord Degrees in Left Panel To Build the Chord Progressions</li>
+                <li>It is Up to You to Select Correct Chord Degrees for the Scale/Song</li>
+                <li>After your are done building/previewing the progressions, Click Save to Save as
+                    Akai
+                    format
+                    Progression
+                    file.</li>
+                <li>To add Category to Progresisons list just create the name as
+                    "CategoryName-ProgressionName"
+                </li>
+                <li>Use MUTE to Enter Separators if you Want to Subdivide the Progression into verse
+                    cgorus
+                    section. Mute will trigger from the Note: 0 (Lowest Note) </li>
+                <li>The +/- Button allow you to shift the octave of the chord relative to the
+                    Progression
+                    octave.</li>
+                <li>You want to check out Hooktheory.com Song Database to find some progressions to
+                    try</li>
+                <li>Midi Output is Omni and is sent to all 16 Midi Channels!</li>
+                <li>Some Bugs are expected and will be fixed as I find them.</li>
+                <li>More Features Refinements will be added as I find the need</li>
+                <li>~Enjoy!!</li>
+
+            </ul>
+        </div>
+    </div>
+</div>

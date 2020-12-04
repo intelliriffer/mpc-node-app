@@ -11,13 +11,7 @@ module.exports = [
         URL: "/",
         HIDDEN: false
     },
-    {
-        NAME: "Projects",
-        PATH: "./api/endpoints/projects.js",
-        PARAM: "/projects",
-        URL: "/projects",
-        HIDDEN: false
-    },
+
     {
         NAME: "Arp Manager",
         PATH: "./api/endpoints/arps.js",
@@ -31,6 +25,20 @@ module.exports = [
         PARAM: "/static",
         URL: "/static",
         HIDDEN: true
+    },
+    {
+        NAME: "Prog Builder",
+        PATH: "./api/endpoints/pbuilder.js",
+        PARAM: "/pbuilder",
+        URL: "/pbuilder",
+        HIDDEN: false
+    },
+    {
+        NAME: "Projects",
+        PATH: "./api/endpoints/projects.js",
+        PARAM: "/projects",
+        URL: "/projects",
+        HIDDEN: false
     },
     {
         NAME: "Shell",

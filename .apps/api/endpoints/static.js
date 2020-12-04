@@ -70,8 +70,12 @@ function HEAD(res, title = 'myApp', css = [], js = []) {
     res.write("</head>");
 }
 
+function CLOSE(res) {
+    res.write(`</body></html>`);
+}
+
 function MENU(req, res) {
-    res.write("<nav>");
+    res.write("<nav><div id='sub-nav'>");
     res.write('<div class="mtitle">FORCE / MPC Server</div>');
     res.write('<div class="menu"><ul>');
 
@@ -81,24 +85,33 @@ function MENU(req, res) {
         if (!t.HIDDEN) res.write(`<li class="${$selected}"><a href="${escape(t.URL)}">${t.NAME}</a></li>`);
 
     });
-    res.write("</ul></div></nav>");
+    res.write("</ul></div></div></nav>");
 
 }
 
 function getMIME($f) {
-    $e = $f.substr(-3).toUpperCase();
-    switch ($e) {
+    //$e = $f.substr(-3).toUpperCase();
+    $ext = $f.split('.').pop().toUpperCase();
+    switch ($ext) {
         case "CSS":
             return 'text/css';
-        case ".JS":
+        case "JS":
             return 'text/javascript';
         case "JPG":
             return 'image/jpeg';
         case "PNG":
             return 'image/png';
+        case "OTF":
+        case "TTF":
+        case "WOFF":
+        case "WOFF2": return `font/${$ext}`;
             return "text/plain";
     }
 
+}
+
+function INCLUDE(res, $file) {
+    res.write(fs.readFileSync($file));
 }
 
 function queJS($js) {
@@ -121,5 +134,7 @@ module.exports = {
     MENU,
     queJS,
     CONFIG,
-    SAVECONFIG
+    SAVECONFIG,
+    CLOSE,
+    INCLUDE
 };
