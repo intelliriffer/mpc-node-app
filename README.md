@@ -15,8 +15,11 @@ The apps build into this are mainly my use cases but can help understand how thi
 
 # Rquirements
 
-**SSH Access to your MPC / Force Device (Custom Image)**
-Please visit the [MPC-LiveXplore Project](https://github.com/TheKikGen/MPC-LiveXplore), Read Through and Obtain Custom Image and Scripts to Build / Modify your Own Images to Flash to your device : [https://github.com/TheKikGen/MPC-LiveXplore](https://github.com/TheKikGen/MPC-LiveXplore)
+1. **SSH Access to your MPC / Force Device (Custom Image)**
+   Please visit the [MPC-LiveXplore Project](https://github.com/TheKikGen/MPC-LiveXplore), Read Through and Obtain Custom Image and Scripts to Build / Modify your Own Images to Flash to your device : [https://github.com/TheKikGen/MPC-LiveXplore](https://github.com/TheKikGen/MPC-LiveXplore)
+
+1. **NodeJs for Arm7**
+   See Intalling NodeJs Section Below.
 
 ## Installation
 
