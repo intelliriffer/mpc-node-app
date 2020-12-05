@@ -13,6 +13,11 @@ The apps build into this are mainly my use cases but can help understand how thi
 2. Copy your Client code to /assets/ (css/js .. ).
 3. [The Prog Bulilder source code](https://github.com/intelliriffer/mpc-node-app/blob/master/.apps/api/endpoints/pbuilder.js) is more or less a complete example of how you would go about injecting client scripts and rendering partial templates etc to build together a bit more involved app.
 
+# Rquirements
+
+**SSH Access to your MPC / Force Device (Custom Image)**
+Please visit the [MPC-LiveXplore Project](https://github.com/TheKikGen/MPC-LiveXplore), Read Through and Obtain Custom Image and Scripts to Build / Modify your Own Images to Flash to your device : [https://github.com/TheKikGen/MPC-LiveXplore](https://github.com/TheKikGen/MPC-LiveXplore)
+
 ## Installation
 
 1.  **Installing This APP**
