@@ -27,3 +27,7 @@ Work in Progress
 
 ~ Amit Talwar
 [www.amitszone.com](http://www.amitszone.com)
+
+# WARNING
+
+The Code is functional,but is unoptimized, needs refactoring and may need commenting (though I tied to keep it as simeple as possible) which will take place over due course of time.
