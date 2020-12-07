@@ -1,5 +1,6 @@
 {
   "SSD": "/media/FORCE",
   "PROJECTS_DIR": "/media/FORCE/Projects",
-  "PROGRESSIONS_DIR": "/media/FORCE/Progressions"
+  "PROGRESSIONS_DIR": "/media/FORCE/Progressions",
+"ARPS_DIR":"/media/PD/Arp Patterns"
 }

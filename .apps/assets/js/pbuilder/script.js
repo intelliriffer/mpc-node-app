@@ -4,6 +4,8 @@
 window.$PROGRESSION = [];
 var midi_output = null;
 var midi_input = null;
+var midi_outputch = 1;
+var midi_inputch = 1;
 var MIDI_ENABLED = false;
 var $SEQ = []; //current progression in memory
 const PLAYMODES = {
@@ -335,9 +337,10 @@ $(document).ready(function () {
                 if ($chrd != $c) {
 
                     if ($c.substr($chrd.length, 1) === 'm') {
+
                         $chrd = $chrd + 'm';
                     }
-                    $c = $chrd + '<sup>' + $c.substr($chrd.length) + '</sup>';
+                    //   $c = $chrd + '<sup>' + $c.substr($chrd.length) + '</sup>';
                 }
                 return $c
 
@@ -444,20 +447,28 @@ $(document).ready(function () {
 
         function renderMidiInSelect() {
             $Inport =
-                '<div class="prow"><label>Midi In:</label><select id="midiINPort">';
+                '<div class="prow"><label>Midi In / Ch:</label><select id="midiINPort">';
             WebMidi.inputs.forEach(function (o) {
                 $Inport += '<option value="' + o.name + '">' + o.name + "</option>";
             });
+            $Inport += '</select><select id="midiINCH">';
+            for (let i = 1; i <= 16; i++) {
+                $Inport += `<option value="${i}">${i}</option>`;
+            }
             $Inport += "</select></div>";
             $("#midi").append($Inport);
         }
 
         function renderMidiOutSelect() {
             $Outport =
-                '<div class="prow"><label> Midi Out: </label><select id="midiOUTPort">';
+                '<div class="prow"><label> Midi Out / Ch: </label><select id="midiOUTPort">';
             WebMidi.outputs.forEach(function (o) {
                 $Outport += '<option value="' + o.name + '">' + o.name + "</option>";
             });
+            $Outport += '</select><select id="midiOUTCH">';
+            for (let i = 1; i <= 16; i++) {
+                $Outport += `<option value="${i}">${i}</option>`;
+            }
             $Outport += "</select></div>";
 
             $("#midi").append($Outport);
@@ -484,11 +495,11 @@ $(document).ready(function () {
             renderPlayModeSelect();
             initializeMidiPorts();
             try {
-                midi_input.addListener("noteon", "all", NoteMsg);
-                midi_input.addListener("noteoff", "all", NoteMsg);
-                midi_input.addListener('channelaftertouch', 'all', cAft);
-                midi_input.addListener('pitchbend', 'all', pMsg);
-                midi_input.addListener("controlchange", "all", ccMsg);
+                midi_input.addListener("noteon", midi_inputch, NoteMsg);
+                midi_input.addListener("noteoff", midi_inputch, NoteMsg);
+                midi_input.addListener('channelaftertouch', midi_inputch, cAft);
+                midi_input.addListener('pitchbend', midi_inputch, pMsg);
+                midi_input.addListener("controlchange", midi_inputch, ccMsg);
                 MIDI_ENABLED = true;
 
             } catch (e) {
@@ -497,22 +508,22 @@ $(document).ready(function () {
 
         }
         function cAft(e) {
-            midi_output.sendChannelAftertouch(e.value);
+            midi_output.sendChannelAftertouch(e.value, midi_outputch);
         }
         function pMsg(e) {
-            midi_output.sendPitchBend(e.value);
+            midi_output.sendPitchBend(e.value, midi_outputch);
         }
         function ccMsg(e) {
-            midi_output.sendControlChange(e.controller.number, e.value);
+            midi_output.sendControlChange(e.controller.number, e.value, midi_outputch);
         }
         function NoteMsg(e) {
             $t = e.note.number - 36;
             if ($t < 0 || $t >= window.$PROGRESSION.length) {
                 if (e.type == 'noteon') {
-                    midi_output.playNote(e.note.number, "all", { rawVelocity: true, velocity: e.rawVelocity });
+                    midi_output.playNote(e.note.number, midi_outputch, { rawVelocity: true, velocity: e.rawVelocity });
                 } else {
 
-                    midi_output.stopNote(e.note.number, "all", { rawVelocity: true, velocity: e.rawVelocity });
+                    midi_output.stopNote(e.note.number, midi_outputch, { rawVelocity: true, velocity: e.rawVelocity });
                 }
                 return;
             }
@@ -526,14 +537,14 @@ $(document).ready(function () {
                 $('#progression li:eq(' + parseInt($t) + ')').addClass('active');
                 if ($c == "MUTE") return;
                 $.each($chord.notes, function (n) {
-                    midi_output.playNote($chord.notes[n], "all", { rawVelocity: true, velocity: e.rawVelocity, time: '+' + $span });
+                    midi_output.playNote($chord.notes[n], midi_outputch, { rawVelocity: true, velocity: e.rawVelocity, time: '+' + $span });
                     $span += $ptime;
                 });
 
             } else {
                 $span = 0;// $ltime;
                 $.each($chord.notes, function (n) {
-                    midi_output.stopNote($chord.notes[n], "all", { rawVelocity: true, velocity: e.rawVelocity, time: '+' + $span });
+                    midi_output.stopNote($chord.notes[n], midi_outputch, { rawVelocity: true, velocity: e.rawVelocity, time: '+' + $span });
                     //$span += $ptime;
                 });
                 $('#progression li:eq(' + parseInt($t) + ')').removeClass('active');
@@ -547,20 +558,30 @@ $(document).ready(function () {
         function initializeMidiPorts() {
             $cInport = $.cookie("AKAImidiINport") || "";
             $cOutport = $.cookie("AKAImidiOUTport") || "";
+            $cInCH = $.cookie("AKAImidiINCH") || "1";
+            $cOutCH = $.cookie("AKAImidiOUTCH") || "1";
             if ($cInport != "") {
                 $("#midiINPort").val($cInport);
             }
             if ($cOutport != "") {
                 $("#midiOUTPort").val($cOutport);
             }
+            $("#midiINCH").val($cInCH);
+            $("#midiOUTCH").val($cOutCH);
+
             setPort(false);
-            $("#midiINPort,#midiOUTPort").on("change", setPort);
+            $("#midiINPort,#midiOUTPort,#midiINCH,#midiOUTCH").on("change", setPort);
         }
         function setPort(reload = true) {
+            setCookie("AKAImidiINCH", $("#midiINCH").val());
+            setCookie("AKAImidiOUTCH", $("#midiOUTCH").val());
             setCookie("AKAImidiINport", $("#midiINPort").val());
+
             midi_input = WebMidi.getInputByName($("#midiINPort").val());
             setCookie("AKAImidiOUTport", $("#midiOUTPort").val());
             midi_output = WebMidi.getOutputByName($("#midiOUTPort").val());
+            midi_inputch = $("#midiINCCH").val();
+            midi_outputch = $("#midiOUTCH").val();
             if (reload) location.reload();
         }
     }, false);   //* End webmidi **/
@@ -584,7 +605,7 @@ $(document).ready(function () {
         $span = 0;
         $.each($chord.notes, function (n) {
             midi_output.playNote($chord.notes[n],
-                "all",
+                midi_outputch,
                 { duration: $duration + ($n * $ptime) - $span, rawVelocity: true, velocity: 100, time: '+' + $span });
             $span += $ptime;
         });
@@ -605,12 +626,12 @@ $(document).ready(function () {
         if (!OFF) {
             $.each($chord.notes, function (n) {
                 midi_output.playNote($chord.notes[n],
-                    "all",
+                    midi_outputch,
                     { rawVelocity: true, velocity: 100, time: '+' + $span });
                 $span += $ptime;
             });
         } else { //note off
-            midi_output.stopNote($chord.notes, "all", { rawVelocity: true, velocity: 0 });
+            midi_output.stopNote($chord.notes, midi_outputch, { rawVelocity: true, velocity: 0 });
         }
     }
 

@@ -543,12 +543,17 @@ footer {
     padding: 2px;
 }
 
-.prow:first-child {
+.prow {
+    display: flex;
     margin-bottom: 4px;
 }
 
+.prow:last-child {
+    margin-bottom: 0px;
+}
+
 .prow label {
-    min-width: 60px !important;
+    width: 88px;
     display: inline-block;
 }
 
