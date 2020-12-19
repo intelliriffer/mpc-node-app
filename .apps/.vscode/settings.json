@@ -2,7 +2,7 @@
   "emeraldwalk.runonsave": {
      "commands": [   {
             "match": "\\.js$",
-            "cmd": "js-beautify -r ${file}"
+            "cmd": "js-beautify --no-preserve-newlines --max-preserve-newlines 2 -r ${file} "
 	    }
     ]
     }

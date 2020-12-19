@@ -18,18 +18,30 @@ The apps build into this are mainly my use cases but can help understand how thi
 1. **SSH Access to your MPC / Force Device (Custom Image)**
    Please visit the [MPC-LiveXplore Project](https://github.com/TheKikGen/MPC-LiveXplore), Read Through and Obtain Custom Image and Scripts to Build / Modify your Own Images to Flash to your device : [https://github.com/TheKikGen/MPC-LiveXplore](https://github.com/TheKikGen/MPC-LiveXplore)
 
-1. **NodeJs for Arm7**
-   See Intalling NodeJs Section Below.
+2. You will need a USB Pen Drive formatted to Ext4 Format with tkgl Bootstrap working. (you can also likely format pen drive in your Force/MPC).
+
+3. Download Install tkgl Bootstrap in your pen drive : [TKGL BootStrap](https://github.com/TheKikGen/MPC-LiveXplore-bootstrap)
+
+4. **NodeJs for Arm7**
+
+   1. Download and Extract NodeJs from here : [NodeJs Arm7](https://drive.google.com/file/d/1Y4FdNeYNau-BKtCO5lhMSNCaMCIoISS7/view?fbclid=IwAR2551izayxRkYAZWy0WoclGUu5sUEUB_hvo7Lqo3uycuhpYUgaw36yV4ik)
+
+   2. Copy/ssh the .nodejs directory to root of your pen drive.
 
 ## Installation
 
 1.  **Installing This APP**
+    1.  Download this app from Github and extract. [Download](https://github.com/intelliriffer/mpc-node-app?fbclid=IwAR3W6LrZX4PXBUchK8UDCvYnIqtMzEK6RfaN1cL1fC9SVo6l8UZ4wXH2uSU)
+    2.  Copy .apps directory to root of your pen drive.
+    3.  Copy the "tkgl_bootstrap" and "tkgl_mod_nodejs.sh" files to the .tkgl_bootstrap directroy on your pen drive. These will automatically start the nodeJs server when your device starts.
 
 Work in Progress
 
-2.  **Installing NodeJs**
+2.  **Setting permissions**
+    1.If you are coming from windows or other system the file permissions might be screwed. Run the following commands to fix these.
 
-Work in Progress
+    chmod +x /media/[mypendrivename]]/.nodejs/bin/n*
+    chmod +x /media/[mypendrivename]/.tkgl_bootstrap/scripts/*.sh
 
 3.  **Setting/Insalling SSL Guide:** [SSL Setup Guide](README-SSL.md)
 

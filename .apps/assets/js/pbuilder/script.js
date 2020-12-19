@@ -1,4 +1,5 @@
 /**
+ * Client Side Script for Progression builder for Akai MPC/Force
  * COPYRIGHT © Amit Talwar www.amitszone.com
  * **/
 window.$PROGRESSION = [];
@@ -20,10 +21,6 @@ var playing = false;
 var seqplaying = false;
 var playQ = [];
 var $dataLIB = [];
-
-
-
-
 $(document).ready(function () {
     buildInternal();
 
@@ -69,15 +66,10 @@ $(document).ready(function () {
         });
     }
 
-
-
-
-
     $.getJSON('/static/js/pbuilder/library.json', function (data) {
         $dataLIB = data;
         buildLIB();
     });
-
 
     $.each(CHORDLIB.CHORDS, function ($crd) {
         let $c = CHORDLIB.CHORDS[$crd];
@@ -193,9 +185,6 @@ $(document).ready(function () {
         });
 
 
-
-
-
         if (window.$PROGRESSION.length) {
             $('.pbuttons').show();
 
@@ -217,11 +206,7 @@ $(document).ready(function () {
                     $(this).find('.pcrd').html('<span>' + chordFormat($(this).data('chord')) + '</span><span class= "subcrd" > ' + getChordName($(this).data('chord')) + '</span > ');
                 });
 
-        } else {
-
-            // clear();
         }
-
     }
 
     $('#pinput').on('input change', fromInput);
@@ -548,11 +533,7 @@ $(document).ready(function () {
                     //$span += $ptime;
                 });
                 $('#progression li:eq(' + parseInt($t) + ')').removeClass('active');
-
-
             }
-
-
         }
 
         function initializeMidiPorts() {
