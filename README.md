@@ -40,8 +40,9 @@ Work in Progress
 2.  **Setting permissions**
     1.If you are coming from windows or other system the file permissions might be screwed. Run the following commands to fix these.
 
-    chmod +x /media/[mypendrivename]]/.nodejs/bin/n*
-    chmod +x /media/[mypendrivename]/.tkgl_bootstrap/scripts/*.sh
+    chmod +x /media/[mypendrivename]]/.nodejs/bin/n\*
+
+    chmod +x /media/[mypendrivename]/.tkgl_bootstrap/scripts/\*.sh
 
 3.  **Setting/Insalling SSL Guide:** [SSL Setup Guide](README-SSL.md)
 
