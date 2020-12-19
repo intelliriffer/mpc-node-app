@@ -31,11 +31,10 @@ The apps build into this are mainly my use cases but can help understand how thi
 ## Installation
 
 1.  **Installing This APP**
+
     1.  Download this app from Github and extract. [Download](https://github.com/intelliriffer/mpc-node-app?fbclid=IwAR3W6LrZX4PXBUchK8UDCvYnIqtMzEK6RfaN1cL1fC9SVo6l8UZ4wXH2uSU)
     2.  Copy .apps directory to root of your pen drive.
     3.  Copy the "tkgl_bootstrap" and "tkgl_mod_nodejs.sh" files to the .tkgl_bootstrap directroy on your pen drive. These will automatically start the nodeJs server when your device starts.
-
-Work in Progress
 
 2.  **Setting permissions**
     1.If you are coming from windows or other system the file permissions might be screwed. Run the following commands to fix these.
